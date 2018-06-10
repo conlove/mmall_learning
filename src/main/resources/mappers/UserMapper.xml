@@ -163,7 +163,6 @@
   </select>
 
   <select id="selectLogin" resultMap="BaseResultMap" parameterType="map">
-    --注意不要使用*使用什么就查询什么，提高性能
     select
     <include refid="Base_Column_List" />
     from mmall_user
@@ -191,7 +190,7 @@
     where username = #{username}
   </update>
 
-  <select id="checkPassword"resultType="int" parameterType="map">
+  <select id="checkPassword" resultType="int" parameterType="map">
     select count(1)
     from mmall_user
     where password = #{password}
