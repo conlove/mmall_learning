@@ -86,7 +86,7 @@ public class CategoryManageController {
      */
     @RequestMapping(value = "/get_category.do",method = RequestMethod.GET)
     @ResponseBody
-    public ServerResponse getChildrenParallelCategory(HttpSession session,Integer categoryId){
+    public ServerResponse getChildrenParallelCategory(HttpSession session,@RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),"用户未登录，请登录");
@@ -110,7 +110,7 @@ public class CategoryManageController {
      */
     @RequestMapping(value = "/get_deep_category.do",method = RequestMethod.GET)
     @ResponseBody
-    public ServerResponse getCategoryAndDeepChildrenCategory(HttpSession session,Integer categoryId){
+    public ServerResponse getCategoryAndDeepChildrenCategory(HttpSession session,@RequestParam(value = "categoryId",defaultValue = "0") Integer categoryId){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
         if (user == null){
             return ServerResponse.createByErrorCodeMessage(ResponseCode.NEED_LOGIN.getCode(),"用户未登录，请登录");
