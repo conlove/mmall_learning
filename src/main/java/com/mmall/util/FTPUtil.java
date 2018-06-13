@@ -53,7 +53,7 @@ public class FTPUtil {
                 ftpClient.enterLocalPassiveMode();
                 for (File fileListItem : fileList){
                     fis = new FileInputStream(fileListItem);
-                    ftpClient.storeFile(remotePath,fis);
+                    ftpClient.storeFile(fileListItem.getName(),fis);
                 }
             } catch (IOException e) {
                 logger.error("文件上传异常",e);

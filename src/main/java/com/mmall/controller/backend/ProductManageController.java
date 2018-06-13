@@ -45,7 +45,7 @@ public class ProductManageController {
      * @param product
      * @return
      */
-    @RequestMapping(value = "/product_save.do",method = RequestMethod.POST)
+    @RequestMapping(value = "/product_save.do")
     @ResponseBody
     public ServerResponse<String> productSave(HttpSession session, Product product){
         User user = (User) session.getAttribute(Const.CURRENT_USER);
