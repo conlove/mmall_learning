@@ -17,6 +17,14 @@ public class Const {
     public interface ProductListOrderBy{
         Set<String> PRICE_DESC_ASC = Sets.newHashSet("price_desc","price_asc");
     }
+
+    public interface Cart{
+        int CHECKED = 1;
+        int UNCHECKED = 0;
+
+        String LIMIT_NUM_FAIL = "LIMIT_NUM_FAIL";
+        String LIMIT_NUM_SUCCESS = "LIMIT_NUM_SUCCESS";
+    }
     //不用枚举而实现分组的功能
     public interface Role{
         int ROLE_CUSTOMER = 0;//普通用户
